@@ -1,0 +1,1150 @@
+/* =========================================
+   APP STYLES
+   Desktop/web sizing is larger.
+   Mobile keeps the same compact design.
+========================================= */
+
+:root {
+	--brand: #4c5fd5;
+	--brand-light: #eef0ff;
+	--bg: #f7f8fc;
+	--card: #ffffff;
+	--text: #202433;
+	--muted: #8b909d;
+	--line: #eeeeef;
+	--green: #6579ed;
+	--red: #f06b73;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	min-height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background: #f4f5f9;
+	color: var(--text);
+}
+
+button,
+input,
+textarea {
+	font-family: inherit;
+}
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app-page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background: #f4f5f9;
+}
+
+.todo-app {
+	position: relative;
+	width: 100%;
+	max-width: 480px;
+	min-height: 820px;
+	padding: 28px 24px 110px;
+	background: #ffffff;
+	overflow: hidden;
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+	width: 100%;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 16px;
+	border: 1px solid #ededf1;
+	border-radius: 4px;
+	background: #ffffff;
+	color: #727783;
+	font-size: 11px;
+	font-weight: 400;
+	cursor: pointer;
+	box-shadow: 0 1px 4px rgba(20, 25, 40, 0.03);
+}
+
+.search-box svg {
+	width: 20px;
+	height: 20px;
+	color: #303747;
+	flex-shrink: 0;
+}
+
+/* =========================================
+   WEEK DAYS
+========================================= */
+
+.week-days {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 4px;
+	margin-top: 14px;
+	margin-bottom: 20px;
+}
+
+.day-item {
+	min-width: 0;
+	height: 58px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2px;
+	color: #b4b7bf;
+}
+
+.day-name {
+	font-size: 12px;
+	line-height: 1;
+}
+
+.day-number {
+	margin-top: 7px;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 500;
+}
+
+.day-item.active {
+	background: #526be8;
+	color: #ffffff;
+}
+
+.day-item.active .day-number {
+	font-weight: 700;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.app-error {
+	margin-bottom: 12px;
+	padding: 10px;
+	border-radius: 5px;
+	background: #fff0f1;
+	color: #b42318;
+	font-size: 14px;
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.summary-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin-bottom: 24px;
+}
+
+.summary-card {
+	height: 76px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-radius: 2px;
+}
+
+.completed-card {
+	background: #eef1ff;
+}
+
+.pending-card {
+	background: #ffeaec;
+}
+
+.summary-icon {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 9px;
+	background: #a7b7ff;
+	color: #263778;
+	line-height: 1;
+}
+
+.summary-icon-mark {
+	width: 16px;
+	height: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1.5px solid currentColor;
+	border-radius: 4px;
+	font-size: 10px;
+}
+
+.pending-icon {
+	background: #ffa3a8;
+	color: #a62c34;
+}
+
+.summary-info {
+	min-width: 0;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	column-gap: 4px;
+}
+
+.summary-info span {
+	width: 100%;
+	font-size: 12px;
+	line-height: 1;
+	color: #4f5563;
+}
+
+.summary-info strong {
+	margin-top: 5px;
+	font-size: 21px;
+	line-height: 1;
+	font-weight: 700;
+	color: #202536;
+}
+
+.summary-info small {
+	font-size: 10px;
+	color: #9a9da5;
+}
+
+/* =========================================
+   WEEKLY PROGRESS
+========================================= */
+
+.progress-section {
+	margin-bottom: 24px;
+}
+
+.progress-section h2,
+.tasks-section h2 {
+	margin: 0;
+	color: #242936;
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+.progress-bar {
+	width: 100%;
+	height: 22px;
+	margin-top: 10px;
+	overflow: hidden;
+	background: #dfe1ff;
+}
+
+.progress-fill {
+	height: 100%;
+	background: #334ca9;
+	transition: width 0.3s ease;
+}
+
+/* =========================================
+   TASK HEADER
+========================================= */
+
+.tasks-section {
+	width: 100%;
+}
+
+.section-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 7px;
+}
+
+.view-all {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #4e63d7;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.2;
+	cursor: pointer;
+}
+
+/* =========================================
+   TASK LIST
+========================================= */
+
+.task-list {
+	width: 100%;
+}
+
+.task-item {
+	min-height: 42px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #eeeeef;
+}
+
+.task-checkbox {
+	width: 17px;
+	height: 17px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 1px solid #9eaeff;
+	border-radius: 1px;
+	background: #ffffff;
+	color: #7185ec;
+	font-size: 12px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.task-checkbox.checked {
+	background: #f0f3ff;
+}
+
+.task-name {
+	min-width: 0;
+	flex: 1;
+	margin-left: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #3e4350;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+.task-completed {
+	color: #777b84;
+	text-decoration: line-through;
+}
+
+.task-actions {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	margin-left: 6px;
+}
+
+.task-actions button {
+	width: 19px;
+	height: 27px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #b8bbc2;
+	cursor: pointer;
+}
+
+.task-actions button:hover {
+	color: #6674d8;
+}
+
+/* =========================================
+   EMPTY / LOADING
+========================================= */
+
+.loading-text,
+.empty-text {
+	margin: 24px 0;
+	text-align: center;
+	color: #9a9da5;
+	font-size: 12px;
+}
+
+/* =========================================
+   ADD TASK BUTTON
+========================================= */
+
+.add-task-button {
+	position: fixed;
+	left: 50%;
+	bottom: 24px;
+	transform: translateX(-50%);
+	width: 58px;
+	height: 58px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: #4d68e8;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: 0 7px 15px rgba(76, 95, 213, 0.28);
+	z-index: 20;
+}
+
+.add-task-button:hover {
+	background: #435bd8;
+}
+
+/* =========================================
+   TASK FORM MODAL
+========================================= */
+
+.task-modal-overlay {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.25);
+	z-index: 100;
+}
+
+.task-modal {
+	width: 100%;
+	max-width: 480px;
+	height: auto;
+	max-height: 720px;
+	overflow-y: auto;
+	padding: 24px 24px 28px;
+	background: #ffffff;
+	border-top: 1px solid #eeeeee;
+	box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.08);
+	animation: taskModalUp 0.18s ease-out;
+}
+
+@keyframes taskModalUp {
+	from {
+		transform: translateY(15px);
+		opacity: 0.8;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* =========================================
+   TASK FORM HEADER
+========================================= */
+
+.task-modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.task-modal-header h2 {
+	margin: 0;
+	color: #252a38;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+.task-close-button {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #535967;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1;
+	cursor: pointer;
+}
+
+/* =========================================
+   TASK FORM GROUP
+========================================= */
+
+.task-form-group {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.task-form-group label {
+	display: block;
+	margin-bottom: 6px;
+	color: #696e79;
+	font-size: 12px;
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+/* =========================================
+   TASK INPUTS
+========================================= */
+
+.task-form-group input[type="text"],
+.task-form-group input[type="date"],
+.task-form-group textarea {
+	width: 100%;
+	border: 1px solid #e5e6ea;
+	border-radius: 1px;
+	background: #ffffff;
+	color: #454a55;
+	outline: none;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.task-form-group input[type="text"],
+.task-form-group input[type="date"] {
+	height: 38px;
+	padding: 0 10px;
+}
+
+.task-form-group textarea {
+	height: 90px;
+	min-height: 90px;
+	padding: 10px;
+	resize: none;
+}
+
+.task-form-group input::placeholder,
+.task-form-group textarea::placeholder {
+	color: #7d818b;
+}
+
+.task-form-group input:focus,
+.task-form-group textarea:focus {
+	border-color: #6375e6;
+}
+
+/* =========================================
+   TIME BUTTONS
+========================================= */
+
+.time-row {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+}
+
+.time-button {
+	flex: 1;
+	height: 38px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 0 10px;
+	border: 1px solid #e5e6ea;
+	border-radius: 1px;
+	background: #ffffff;
+	color: #454a55;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.clock-icon {
+	width: 14px;
+	height: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #3f4653;
+	font-size: 14px;
+	line-height: 1;
+}
+
+/* =========================================
+   DATE
+========================================= */
+
+.date-input-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.date-input-wrapper input {
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.date-input-wrapper input::-webkit-calendar-picker-indicator {
+	width: 14px;
+	height: 14px;
+	opacity: 0.65;
+	cursor: pointer;
+}
+
+/* =========================================
+   FORM ERROR
+========================================= */
+
+.task-form-error {
+	margin: -2px 0 8px;
+	color: #d92d20;
+	font-size: 12px;
+}
+
+/* =========================================
+   CREATE BUTTON
+========================================= */
+
+.create-task-button {
+	width: 100%;
+	height: 43px;
+	margin-top: 4px;
+	border: 0;
+	border-radius: 0;
+	background: #4d68e8;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	box-shadow: none;
+	transition: background 0.15s ease;
+}
+
+.create-task-button:hover {
+	background: #435bd8;
+}
+
+.create-task-button:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+/* =========================================
+   SEARCH SCREEN
+========================================= */
+
+.search-page {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background: #dcdcdc;
+	overflow-y: auto;
+}
+
+.search-screen {
+	position: relative;
+	width: 100%;
+	max-width: 480px;
+	min-height: 820px;
+	background: #ffffff;
+	overflow: hidden;
+}
+
+/* =========================================
+   SEARCH FRAME TITLE
+========================================= */
+
+.search-frame-title {
+	height: 44px;
+	display: flex;
+	align-items: center;
+	padding-left: 3px;
+	background: #dddddd;
+	color: #8d8d8d;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+/* =========================================
+   SEARCH HEADER
+========================================= */
+
+.search-header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	padding: 22px 20px 0;
+}
+
+/* =========================================
+   SEARCH BACK BUTTON
+========================================= */
+
+.search-back-button {
+	width: 24px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #252933;
+	cursor: pointer;
+}
+
+.search-back-button svg {
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+
+/* =========================================
+   SEARCH INPUT
+========================================= */
+
+.search-input-wrapper {
+	position: relative;
+	flex: 1;
+	height: 43px;
+}
+
+.search-input {
+	width: 100%;
+	height: 43px;
+	padding: 0 40px 0 14px;
+	border: 1px solid #e4e4e7;
+	border-radius: 1px;
+	outline: none;
+	background: #ffffff;
+	color: #30343d;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.search-input::placeholder {
+	color: #888b91;
+}
+
+.search-input:focus {
+	border-color: #d8dce5;
+}
+
+.search-icon {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #48505c;
+	pointer-events: none;
+}
+
+/* =========================================
+   SEARCH RESULTS
+========================================= */
+
+.search-results {
+	width: 100%;
+	margin-top: 18px;
+	padding: 0 20px;
+}
+
+.search-task-row {
+	width: 100%;
+	min-height: 55px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #eeeeee;
+}
+
+/* =========================================
+   SEARCH CHECKBOX
+========================================= */
+
+.search-checkbox {
+	width: 16px;
+	height: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	padding: 0;
+	border: 1px solid #9aaeff;
+	border-radius: 1px;
+	background: #ffffff;
+	color: #657cf0;
+	cursor: pointer;
+}
+
+.search-checkbox.completed {
+	background: #f4f6ff;
+}
+
+/* =========================================
+   SEARCH TASK TEXT
+========================================= */
+
+.search-task-name {
+	min-width: 0;
+	flex: 1;
+	margin-left: 12px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #343944;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.search-task-name.completed {
+	color: #777b83;
+	text-decoration: line-through;
+}
+
+/* =========================================
+   SEARCH ACTIONS
+========================================= */
+
+.search-task-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: 7px;
+}
+
+.search-task-actions button {
+	width: 20px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #b8bbc1;
+	cursor: pointer;
+}
+
+.search-task-actions button:hover {
+	color: #6575d9;
+}
+
+/* =========================================
+   SEARCH EMPTY
+========================================= */
+
+.search-empty {
+	margin-top: 35px;
+	text-align: center;
+	color: #8d929c;
+	font-size: 14px;
+}
+
+/* =========================================
+   MOBILE
+   Same design, only smaller sizing.
+========================================= */
+
+@media (max-width: 479px) {
+	.todo-app {
+		max-width: 218px;
+		min-height: 442px;
+		padding: 14px 12px 72px;
+	}
+
+	.search-box {
+		height: 25px;
+		padding: 0 9px;
+		font-size: 5.5px;
+	}
+
+	.search-box svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.week-days {
+		gap: 2px;
+		margin-top: 8px;
+		margin-bottom: 11px;
+	}
+
+	.day-item {
+		height: 31px;
+	}
+
+	.day-name {
+		font-size: 4.5px;
+	}
+
+	.day-number {
+		margin-top: 4px;
+		font-size: 8px;
+	}
+
+	.summary-row {
+		gap: 7px;
+		margin-bottom: 16px;
+	}
+
+	.summary-card {
+		height: 44px;
+		padding: 6px 7px;
+	}
+
+	.summary-icon {
+		width: 13px;
+		height: 13px;
+		margin-right: 5px;
+	}
+
+	.summary-icon-mark {
+		width: 9px;
+		height: 9px;
+		border-width: 1px;
+		border-radius: 2px;
+		font-size: 5px;
+	}
+
+	.summary-info span {
+		font-size: 5.5px;
+	}
+
+	.summary-info strong {
+		margin-top: 3px;
+		font-size: 12px;
+	}
+
+	.summary-info small {
+		font-size: 4.5px;
+	}
+
+	.progress-section {
+		margin-bottom: 15px;
+	}
+
+	.progress-section h2,
+	.tasks-section h2 {
+		font-size: 12px;
+	}
+
+	.progress-bar {
+		height: 13px;
+		margin-top: 7px;
+	}
+
+	.section-header {
+		margin-bottom: 5px;
+	}
+
+	.view-all {
+		font-size: 12px;
+	}
+
+	.task-item {
+		min-height: 24px;
+	}
+
+	.task-checkbox {
+		width: 11px;
+		height: 11px;
+		font-size: 12px;
+	}
+
+	.task-name {
+		margin-left: 7px;
+		font-size: 5.5px;
+	}
+
+	.task-actions {
+		gap: 5px;
+		margin-left: 5px;
+	}
+
+	.task-actions button {
+		width: 12px;
+		height: 18px;
+	}
+
+	.loading-text,
+	.empty-text {
+		font-size: 10px;
+	}
+
+	.add-task-button {
+		width: 41px;
+		height: 41px;
+		bottom: 11px;
+		font-size: 22px;
+	}
+
+	/* Task modal */
+
+	.task-modal {
+		max-width: 218px;
+		height: 313px;
+		max-height: 313px;
+		padding: 13px 14px 17px;
+	}
+
+	.task-modal-header {
+		margin-bottom: 13px;
+	}
+
+	.task-modal-header h2 {
+		font-size: 14px;
+	}
+
+	.task-close-button {
+		width: 14px;
+		height: 14px;
+		font-size: 14px;
+	}
+
+	.task-form-group {
+		margin-bottom: 9px;
+	}
+
+	.task-form-group label {
+		margin-bottom: 4px;
+		font-size: 5.5px;
+	}
+
+	.task-form-group input[type="text"],
+	.task-form-group input[type="date"] {
+		height: 22px;
+		padding: 0 7px;
+		font-size: 10px;
+	}
+
+	.task-form-group textarea {
+		height: 54px;
+		min-height: 54px;
+		padding: 7px;
+		font-size: 12px;
+	}
+
+	.time-row {
+		gap: 8px;
+	}
+
+	.time-button {
+		height: 22px;
+		gap: 6px;
+		padding: 0 7px;
+		font-size: 8px;
+	}
+
+	.clock-icon {
+		width: 9px;
+		height: 9px;
+		font-size: 10px;
+	}
+
+	.date-input-wrapper input::-webkit-calendar-picker-indicator {
+		width: 10px;
+		height: 10px;
+	}
+
+	.task-form-error {
+		font-size: 5.5px;
+	}
+
+	.create-task-button {
+		height: 27px;
+		font-size: 12px;
+	}
+
+	/* Search screen */
+
+	.search-screen {
+		max-width: 218px;
+		min-height: 442px;
+	}
+
+	.search-frame-title {
+		height: 28px;
+		padding-left: 1px;
+		font-size: 12px;
+	}
+
+	.search-header {
+		gap: 12px;
+		padding: 14px 10px 0;
+	}
+
+	.search-back-button {
+		width: 14px;
+		height: 20px;
+	}
+
+	.search-back-button svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.search-input-wrapper,
+	.search-input {
+		height: 26px;
+	}
+
+	.search-input {
+		padding-left: 9px;
+		padding-right: 28px;
+		font-size: 12px;
+	}
+
+	.search-icon {
+		right: 7px;
+	}
+
+	.search-results {
+		margin-top: 12px;
+		padding: 0 10px;
+	}
+
+	.search-task-row {
+		min-height: 35px;
+	}
+
+	.search-checkbox {
+		width: 11px;
+		height: 11px;
+	}
+
+	.search-task-name {
+		margin-left: 8px;
+		font-size: 12px;
+	}
+
+	.search-task-actions {
+		gap: 5px;
+		margin-left: 5px;
+	}
+
+	.search-task-actions button {
+		width: 13px;
+		height: 18px;
+	}
+
+	.search-empty {
+		font-size: 12px;
+	}
+}
